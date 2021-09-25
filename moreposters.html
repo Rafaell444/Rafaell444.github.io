@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GIFT4U</title>
+    <link rel="shortcut icon" type="image/x-icon" href="img/Group1.2.png" />
+    <link rel="stylesheet" href="css/more.css">
+    <link rel="stylesheet" href="//cdn.web-fonts.ge/fonts/alk-rounded-mtav-med/css/alk-rounded-mtav-med.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" 
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script>
+
+      document.onclick = () => applyCursorRippleEffect(event); 
+      
+      function applyCursorRippleEffect(e) {
+         const ripple = document.createElement("div");
+      
+         ripple.className = "ripple";
+         document.body.appendChild(ripple);
+      
+        ripple.style.left = `${e.clientX}px`;
+        ripple.style.top = `${e.clientY}px`; 
+      
+         ripple.style.animation = "ripple-effect .4s  linear";
+         ripple.onanimationend = () => document.body.removeChild(ripple);
+      
+      }
+      
+          </script>
+</head>
+<body>
+<header>
+    <div class="header-wrapper">
+        <div class="logo"><a href="index.html"> <img src="img/Group1.png" alt="LOGO"></a></div>
+        <nav class="navigation">
+            <div class="dropdown">
+              <div class="dropbtn">პროდუქცია</div>
+              <div class="dropdown-content">
+                <a href="postercat.html">პოსტერები</a>
+                <a href="portraitcat.html">პორტრეტები</a>
+                <a href="collagecat.html">ფოტოკოლაჟები</a>
+                </div>
+              </div>
+
+              <a href="order.html">შეკვეთა</a>
+              <a href="about.html">ჩვენს შესახებ</a>
+              <a href="contact.html">კონტაქტი</a>
+            </nav>
+
+            <div id="mySidenav" class="sidenav">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+                >&times;</a
+              >
+
+              <div
+                onclick="togglecollage()"
+                class="navlink"
+                style="display: flex; align-items: center"
+              >
+                <a href="javascript:void(0);">პროდუქცია</a>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <span id="collageNav"
+                ><a href="postercat.html"><h1>პოსტერები</h1></a>
+                <a href="portraitcat.html"><h1>პორტრეტები</h1></a>
+                <a href="collagecat.html"><h1>ფოტოკოლაჟები</h1></a>
+              </span>
+  
+            <a href="order.html">შეკვეთა</a>
+            <a href="about.html">ჩვენს შესახებ</a>
+            <a href="contact.html">კონტაქტი</a>
+          </div>
+  
+          <div class="responsive-menu" onclick="openNav()">
+            <i style="font-size: 26px" class="fas fa-bars"></i>
+          </div>
+  
+          <script>
+            function openNav() {
+              document.getElementById("mySidenav").style.width = "100%";
+            }
+  
+            function closeNav() {
+              document.getElementById("mySidenav").style.width = "0";
+            }
+          </script>
+        </div>
+      </header>
+
+
+<div class="con-wrap">
+  <div class="oneimg"><img src="img/more/postermoresl.png"></div>
+  <div class="conone">
+    
+    
+    <div class="con"><p>ზომები:</p>
+      <div class="info">არასტანდარტული ზომის პოსტერის ფასის გასაგებად გთხოვთ მიუთითოთ რიცხვები:</div><br><br>
+      <div class="info2">მაქს. სიგანე = 33სმ&nbsp&nbsp&nbsp&nbsp&nbspმაქს. სიგრძე = 48სმ</div>
+
+    <div class="fass1">
+      
+      <form>
+        მიუთითეთ სიგანე: <input placeholder="(example:30) max=33სმ" type="text" id="firstNumber" /><br>
+        მიუთითეთ სიგრძე: <input placeholder="(example:40) max=48სმ" type="text" id="secondNumber" /><br>
+        <div class="btnn"><input  id = "btn" type="button" onClick="multiplyBy()" Value="გამოთვლა" />
+        </form></div>
+        <h4>ფასი ზომის მიხედვით: <br>
+        <span id = "result"></span>
+        </h4>
+        
+    </div>
+  </div>
+    <div class="con" id = "con"><p>მასალა:</p>
+      <h3>ჩვენი პოსტერები დამზადებულია ხარისხიანი მასალით:<br><br>
+      1.ხარისხიანი ცარცის ქაღალდი<br>
+      2.უმაღლესი ხარისხის ფოტო<br>
+      3. უმაღლესი ხარისხის ბეჭდვა<br>
+      ----------------------------------------------<br>
+        <div class = "charcho" style="    text-align: center;
+        margin-right: 10px;color: red">პოსტერი + ჩარჩო + მინა:ფასის გასაგებად მოგვწერეთ ან დაგვირეკეთ</div>
+      
+      
+</h3>
+      </div>
+    
+</div>
+
+<script>
+function multiplyBy()
+  {
+          num1 = document.getElementById("firstNumber").value;
+          num2 = document.getElementById("secondNumber").value;
+          if(num1 <= 33 && num2 <= 48){
+            document.getElementById("result").innerHTML = (num1/100) * (num2/100) *55+"₾";
+            document.getElementById("result").style.color = "green"
+
+          }else{
+            document.getElementById("result").innerHTML = "ინფორმაცია არასწორია"
+            document.getElementById("result").style.color = "red"
+          }
+  }
+  
+
+  </script>
+
+
+  <div class="contwo">
+    <div class="con1"><p>შეკვეთის ჩაბარება:</p>
+    
+    <h5>
+      თბილისის მასშტაბით<br> სტანდარტული მიტანის სერვისი:
+     <div class="text1"> ვადა: (2 დღე) - საფასური 3₾</div>
+      თბილისს გარეთ მიტანის სევისი:
+        <div class="text1">ვადა: (2-5 დღე) - 10₾</div>
+      თბილისში დაჩქარებული მიტანის სერვისი: (თუ შეკვეთა მიღებულია დღის პირველ საათამდე)
+      <div class="text1">ვადა: (1დღე) - 6₾</h5></div>
+
+    <div class="con1"><p>კონტაქტი:</p>
+
+      <h2>ნებისმიერ კითხვაზე პასუხის მისაღებად დაგვიკავშირდით
+        </h2>
+      <div class="contwr">
+        <div class="cont">
+          Facebook:<br>
+          Instagram:<br>
+          Gmail:<br>
+          საკონტაქტო ნომერი:<br></div>
+        <div class="contt">
+          <a href="https://www.facebook.com/Gift-4-You-საჩუქარი-შენთვის-101747578762654/">დამაკლიკე</a><br>
+          <a href="https://www.instagram.com/giftfortbilisi/">დამაკლიკე</a><br>
+          <a href="mailto:giftforyou1990@gmail.com">დამაკლიკე</a><br>
+          <a href="contact.html">დამაკლიკე</a><br>
+        </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+
+<footer class="footer">
+    <div class="foot">
+        <div class="footer-description">
+            <div class="contentfirst">
+                <div class="orderinfo">შესაკვეთად მოგვწერეთ ნებისმიერ დროს, ვმუშაობთ ექსტრემალურ სიტუაციებშიც</div>
+            </div>
+            <div class="contentsecond">
+                <div class="facebook"><a href="https://www.facebook.com/Gift-4-You-საჩუქარი-შენთვის-101747578762654/" class="facebook"><img class="footer-icon" src="img/facebook.png" alt="fb"></a><span
+                        class="txtg">Gift4You</span></div>
+                <div class="insta"><a href="https://instagram.com/giftfortbilisi?utm_medium=copy_link" class="instagram"><img class="footer-icon" src="img/instagram.png" alt="insta"></a><span
+                        class="txtg">GiftForTbilisi</span></div>
+                <div class="gmail"><a href="mailto:giftforyou1990@gmail.com" class="gmail"><img class="footer-icon" src="img/gmail.png" alt="gmail"></a><span
+                        class="txtg">GiftForYou1990</span>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="copyrights">
+            <div class="footer-logo"><img src="img/Group1.png" alt=""></div>
+            <h1>copyrights reserved
+                2021 ©</h1>
+        </div>
+
+
+    </div>
+
+</footer>
+<script>
+    let postersNav = (document.getElementById("postersNav").style.display =
+      "none");
+    function togglePosters() {
+      let postersNav = document.getElementById("postersNav");
+      if (postersNav.style.display === "none") {
+        postersNav.style.display = "block";
+      } else postersNav.style.display = "none";
+    }
+  </script>
+</body>
+</html>
