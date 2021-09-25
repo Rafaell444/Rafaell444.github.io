@@ -69,39 +69,44 @@
                 >
   
                 <div
-                  onclick="togglecollage()"
-                  class="navlink"
-                  style="display: flex; align-items: center"
-                >
-                  <a href="javascript:void(0);">პროდუქცია</a>
-                  <i class="fas fa-chevron-down"></i>
-                </div>
-                <span id="collageNav"
-                  ><a href="postercat.html"><h1>პოსტერები</h1></a>
-                  <a href="portraitcat.html"><h1>პორტრეტები</h1></a>
-                  <a href="collagecat.html"><h1>ფოტოკოლაჟები</h1></a>
-                </span>
-
-              <a href="order.html">შეკვეთა</a>
-              <a href="about.html">ჩვენს შესახებ</a>
-              <a href="contact.html">კონტაქტი</a>
-            </div>
-
-            <div class="responsive-menu" onclick="openNav()">
-              <i style="font-size: 26px" class="fas fa-bars"></i>
-            </div>
-
-            <script>
-              function openNav() {
-                document.getElementById("mySidenav").style.width = "100%";
-              }
-
-              function closeNav() {
-                document.getElementById("mySidenav").style.width = "0";
-              }
-            </script>
+            onclick="toggleNav()"
+            class="navlink"
+            style="display: flex; align-items: center"
+          >
+            <a href="javascript:void(0);">პროდუქცია</a>
+            <i class="fas fa-chevron-down"></i>
           </div>
-        </header>
+          <span id="collageNav"
+            ><a href="postercat.html"><h1>პოსტერები</h1></a>
+            <a href="portraitcat.html"><h1>პორტრეტები</h1></a>
+            <a href="collagecat.html"><h1>ფოტოკოლაჟები</h1></a>
+          </span>
+
+          <a href="order.html">შეკვეთა</a>
+          <a href="about.html">ჩვენს შესახებ</a>
+          <a href="contact.html">კონტაქტი</a>
+        </div>
+
+        <div class="responsive-menu" onclick="openNav()">
+          <i style="font-size: 26px" class="fas fa-bars"></i>
+        </div>
+
+        <script>
+          function openNav() {
+            document.getElementById("mySidenav").style.width = "100%";
+          }
+
+          function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+          }
+
+          const collageNav = document.querySelector("#collageNav");
+          function toggleNav() {
+            collageNav.classList.toggle("active-nav");
+          }
+        </script>
+      </div>
+    </header>
 
         
           <input

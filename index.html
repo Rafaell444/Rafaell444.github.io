@@ -23,42 +23,36 @@
       referrerpolicy="no-referrer"
     />
     <script>
+      document.onclick = () => applyCursorRippleEffect(event);
 
-      document.onclick = () => applyCursorRippleEffect(event); 
-      
       function applyCursorRippleEffect(e) {
-         const ripple = document.createElement("div");
-      
-         ripple.className = "ripple";
-         document.body.appendChild(ripple);
-      
+        const ripple = document.createElement("div");
+
+        ripple.className = "ripple";
+        document.body.appendChild(ripple);
+
         ripple.style.left = `${e.clientX}px`;
-        ripple.style.top = `${e.clientY}px`; 
-      
-         ripple.style.animation = "ripple-effect .4s  linear";
-         ripple.onanimationend = () => document.body.removeChild(ripple);
-      
+        ripple.style.top = `${e.clientY}px`;
+
+        ripple.style.animation = "ripple-effect .4s  linear";
+        ripple.onanimationend = () => document.body.removeChild(ripple);
       }
-      
-          </script>
+    </script>
     <script>
+      document.onclick = () => applyCursorRippleEffect(event);
 
-document.onclick = () => applyCursorRippleEffect(event); 
+      function applyCursorRippleEffect(e) {
+        const ripple = document.createElement("div");
 
-function applyCursorRippleEffect(e) {
-   const ripple = document.createElement("div");
+        ripple.className = "ripple";
+        document.body.appendChild(ripple);
 
-   ripple.className = "ripple";
-   document.body.appendChild(ripple);
+        ripple.style.left = `${e.clientX}px`;
+        ripple.style.top = `${e.clientY}px`;
 
-  ripple.style.left = `${e.clientX}px`;
-  ripple.style.top = `${e.clientY}px`; 
-
-   ripple.style.animation = "ripple-effect .4s  linear";
-   ripple.onanimationend = () => document.body.removeChild(ripple);
-
-}
-
+        ripple.style.animation = "ripple-effect .4s  linear";
+        ripple.onanimationend = () => document.body.removeChild(ripple);
+      }
     </script>
 
     <script
@@ -81,32 +75,32 @@ function applyCursorRippleEffect(e) {
               <a href="postercat.html">პოსტერები</a>
               <a href="portraitcat.html">პორტრეტები</a>
               <a href="collagecat.html">ფოტოკოლაჟები</a>
-              </div>
             </div>
+          </div>
 
-            <a href="order.html">შეკვეთა</a>
-            <a href="about.html">ჩვენს შესახებ</a>
-            <a href="contact.html">კონტაქტი</a>
-          </nav>
+          <a href="order.html">შეკვეთა</a>
+          <a href="about.html">ჩვენს შესახებ</a>
+          <a href="contact.html">კონტაქტი</a>
+        </nav>
 
-          <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
-              >&times;</a
-            >
+        <div id="mySidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+            >&times;</a
+          >
 
-            <div
-              onclick="togglecollage()"
-              class="navlink"
-              style="display: flex; align-items: center"
-            >
-              <a href="javascript:void(0);">პროდუქცია</a>
-              <i class="fas fa-chevron-down"></i>
-            </div>
-            <span id="collageNav"
-              ><a href="postercat.html"><h1>პოსტერები</h1></a>
-              <a href="portraitcat.html"><h1>პორტრეტები</h1></a>
-              <a href="collagecat.html"><h1>ფოტოკოლაჟები</h1></a>
-            </span>
+          <div
+            onclick="toggleNav()"
+            class="navlink"
+            style="display: flex; align-items: center"
+          >
+            <a href="javascript:void(0);">პროდუქცია</a>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <span id="collageNav"
+            ><a href="postercat.html"><h1>პოსტერები</h1></a>
+            <a href="portraitcat.html"><h1>პორტრეტები</h1></a>
+            <a href="collagecat.html"><h1>ფოტოკოლაჟები</h1></a>
+          </span>
 
           <a href="order.html">შეკვეთა</a>
           <a href="about.html">ჩვენს შესახებ</a>
@@ -125,14 +119,14 @@ function applyCursorRippleEffect(e) {
           function closeNav() {
             document.getElementById("mySidenav").style.width = "0";
           }
+
+          const collageNav = document.querySelector("#collageNav");
+          function toggleNav() {
+            collageNav.classList.toggle("active-nav");
+          }
         </script>
       </div>
-
-
-      
     </header>
-
-    
 
     <div class="slideshow-container">
       <div class="mySlides fade">
@@ -193,7 +187,7 @@ function applyCursorRippleEffect(e) {
       }
     </script>
 
-    <div class="ad-wrapper" style = "display: block !important;">
+    <div class="ad-wrapper" style="display: block !important">
       <div class="ad">
         <div class="greet">
           <div class="adimg">
@@ -218,11 +212,6 @@ function applyCursorRippleEffect(e) {
         </div>
       </div>
     </div>
-
-
-
-
-
 
     <div class="container">
       <h2>სამეგობრო:</h2>
@@ -356,30 +345,29 @@ function applyCursorRippleEffect(e) {
     <div id="fb-root"></div>
 
     <!-- Your Chat plugin code -->
-    <div id="fb-customer-chat" class="fb-customerchat">
-    </div>
+    <div id="fb-customer-chat" class="fb-customerchat"></div>
 
     <script>
-      var chatbox = document.getElementById('fb-customer-chat');
+      var chatbox = document.getElementById("fb-customer-chat");
       chatbox.setAttribute("page_id", "101747578762654");
       chatbox.setAttribute("attribution", "biz_inbox");
 
-      window.fbAsyncInit = function() {
+      window.fbAsyncInit = function () {
         FB.init({
-          xfbml            : true,
-          version          : 'v12.0'
+          xfbml: true,
+          version: "v12.0",
         });
       };
 
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
+      (function (d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
         fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
+      })(document, "script", "facebook-jssdk");
     </script>
-
-    
   </body>
 </html>

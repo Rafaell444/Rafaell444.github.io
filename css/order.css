@@ -67,6 +67,13 @@ button {
     border: none;
 }
 
+#collageNav {
+    display: none;
+  }
+  
+  .active-nav {
+    display: block !important;
+  }
 /*#####################################*/
 
 .header-wrapper{
